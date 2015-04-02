@@ -1,0 +1,17 @@
+<html>
+<body>
+<h1>Welcome to Order Processing!</h1>
+
+<p>You're logged in as <span sec:authentication="name">username</span>.</p>
+
+<p><a href="/create">Create order</a></p>
+
+<p sec:authorize="hasRole('MANAGER')">
+    <a href="/updateStatus">Update order status</a>
+</p>
+
+<form method="post" action="#" th:action="@{/logout}">
+    <input type="submit" value="Logout" />
+</form>
+</body>
+</html>
